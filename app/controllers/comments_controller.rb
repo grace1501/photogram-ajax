@@ -17,6 +17,10 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /comments or /comments.json
@@ -30,7 +34,7 @@ class CommentsController < ApplicationController
         format.json { render :show, status: :created, location: @comment }
 
         format.js do
-          render template: "comments/create.js.erb"
+          render template: "comments/create"
         end
         
       else
