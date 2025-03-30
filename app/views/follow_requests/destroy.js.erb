@@ -1,2 +1,8 @@
+<!--$("#<%#= dom_id(@follow_request) %>").toggle();-->
+
+var current = $("<%= j(render 'follow_requests/follow_unfollow', follow_request: @follow_request) %>");
+var update = $("#<%= dom_id(@follow_request) %>");
+
+current.replaceWith(update)
 
 console.log("You un-followed this user")

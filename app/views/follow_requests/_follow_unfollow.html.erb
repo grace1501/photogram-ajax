@@ -7,7 +7,7 @@
         Un-request
       <% end %>
     <% elsif follow_request.accepted? %>
-      <%= link_to follow_request, method: :delete, class: "btn btn-outline-secondary" do %>
+      <%= link_to follow_request, method: :delete, remote: true, class: "btn btn-outline-secondary" do %>
         Un-follow
       <% end %>
     <% end %>
