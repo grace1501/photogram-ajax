@@ -1,2 +1,9 @@
-$("#<%= dom_id(@like) %>").toggle();
+<!--Query the area that display likes_count and like/unlike button with photo_id-->
+var current_likes = $("#<%= dom_id(@like.photo) %>_likes")
+
+<!--Render the partial views with updated like state (the request was sent => like was added, like_count increased)-->
+var update_likes = $("<%= j(render "photos/likes", photo: @like.photo) %>")
+
+current_likes.replaceWith(update_likes)
+
 console.log("create like")
