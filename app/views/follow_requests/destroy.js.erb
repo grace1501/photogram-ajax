@@ -1,7 +1,6 @@
-<!--$("#<%#= dom_id(@follow_request) %>").toggle();-->
+var current = $("#sender_<%= @follow_request.sender.id %>_recipient_<%= @follow_request.recipient.id %>_follow_unfollow");
 
-var current = $("<%= j(render 'follow_requests/follow_unfollow', follow_request: @follow_request) %>");
-var update = $("#<%= dom_id(@follow_request) %>");
+var update = $("<%= j(render "follow_requests/follow_unfollow", sender: @follow_request.sender, recipient: @follow_request.recipient) %>");
 
 current.replaceWith(update)
 
