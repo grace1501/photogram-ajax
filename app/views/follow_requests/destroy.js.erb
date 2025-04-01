@@ -1,0 +1,3 @@
+$(".sender_<%= @follow_request.sender.id %>_recipient_<%= @follow_request.recipient.id %>_follow_unfollow").replaceWith($("<%= j(render "follow_requests/follow_unfollow", sender: @follow_request.sender, recipient: @follow_request.recipient) %>"))
+
+console.log("You un-followed this user")

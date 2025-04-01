@@ -1,0 +1,9 @@
+<!--Query the area that display likes_count and like/unlike button with photo_id-->
+var current_likes = $("#<%= dom_id(@like.photo) %>_likes")
+
+<!--Render the partial views with updated like state (the request was sent = like was removed, like_count decreased)-->
+var update_likes = $("<%= j(render "photos/likes", photo: @like.photo) %>")
+
+current_likes.replaceWith(update_likes)
+
+console.log("destroy like")

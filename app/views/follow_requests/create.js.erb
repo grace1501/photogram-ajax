@@ -1,0 +1,5 @@
+<!--Query all the follow/unfollow buttons with sender_id and recipient_id, use class instead of id. Then use replaceWith in one line, otherwise we have to run a loop - with Javascript - to apply the change to all queried elements store in an array-->
+
+$(".sender_<%= @follow_request.sender.id %>_recipient_<%= @follow_request.recipient.id %>_follow_unfollow").replaceWith($("<%= j(render "follow_requests/follow_unfollow", sender: @follow_request.sender, recipient: @follow_request.recipient) %>"))
+
+console.log("You followed this user")
